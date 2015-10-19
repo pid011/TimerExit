@@ -1,2 +1,2 @@
 # TimerExit
- turn off your computer at a desired time.
+ turn off your computer at a scheduled time.
