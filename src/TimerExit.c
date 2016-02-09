@@ -5,25 +5,18 @@
 
 void ShutdownCommand(int sec) {
 	char S_cmd[100];
-	sprintf_s(S_cmd, sizeof(S_cmd), "shutdown /s /t %d", sec);
-	system(S_cmd);
+	
 }
 void RestartCommand(int sec) {
 	char R_cmd[100];
-	sprintf_s(R_cmd, sizeof(R_cmd), "shutdown /r /t %d", sec);
-	system(R_cmd);
+	
 }
 
 void Cancel() {
 	int cancelCommand;
-	puts("취소 하시겠습니까?");
-	puts("press    YES = 1     NO = 2");
-	scanf_s("%d", &cancelCommand);
+	
 
-	if (cancelCommand == 1) {
-		system("shutdown /a");
-		puts("취소 되었습니다.");
-	}
+
 }
 void error() {
 	puts("error : 해당 명령어는 없는 명령어 입니다");
@@ -77,13 +70,12 @@ int main(void) {
 	}
 	else if (ch == 2) {
 		RestartCommand(sec);
-		printf("\'다시시작\'을 예약하셨으며 \'%u\'초 후에 종료됩니다.\n\n\n", sec);
+
 	}
 
 	Cancel();
 
-	puts("아무키나 누를 시 프로그램이 종료됩니다.");
-	_getch();
+	
 
 	return 0;
 }
