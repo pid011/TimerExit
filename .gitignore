@@ -52,3 +52,4 @@ Mkfile.old
 dkms.conf
 /src/.vs/TimerExit_v2.0/v15
 /src/Debug
+/src/x64/Debug

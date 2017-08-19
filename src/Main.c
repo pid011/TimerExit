@@ -6,14 +6,14 @@
 int getTime() {
 	int hour, min, sec;
 
-	printf("[Console] 시간 입력. ex)\'0\' 시간 \'30\' 분뒤면 \'0\' 이라고 입력.\n");
-	printf("[Console] 입력:");
+	printf("시간 입력. ex)\'0\' 시간 \'30\' 분뒤면 \'0\' 이라고 입력.\n");
+	printf("입력:");
 	scanf_s("%d", &hour);
 
-	printf("[Console] 분 입력. ex)\'0\' 시간 \'30\' 분뒤면 \'30\' 이라고 입력.\n");
-	printf("[Console] 입력:");
+	printf("분 입력. ex)\'0\' 시간 \'30\' 분뒤면 \'30\' 이라고 입력.\n");
+	printf("입력:");
 	scanf_s("%d", &min);
-	puts("[Console] \n...\n");
+	puts("\n...\n");
 	hour *= 3600;
 	min *= 60;
 	return sec = hour + min;
@@ -25,8 +25,8 @@ int setCommand(int choice) {
 
 	if (choice != 1 && choice != 2)
 	{
-		puts("[Console] error : 해당 명령어는 없는 명령어 입니다.");
-		puts("[Console] 아무 키나 누를 시 종료됩니다.");
+		puts("error : 해당 명령어는 없는 명령어 입니다.");
+		puts("아무 키나 누를 시 종료됩니다.");
 		_getch();
 		exit(0);
 	}
@@ -35,14 +35,14 @@ int setCommand(int choice) {
 		sec = getTime();
 		sprintf_s(cmd, sizeof(cmd), "shutdown /s /t %d", sec);
 		system(cmd);
-		printf("[Console] \'종료\'를 예약하셨습니다.\n");
+		printf("\'종료\'를 예약하셨습니다.\n");
 	}
 	else if (choice == 2)
 	{
 		sec = getTime();
 		sprintf_s(cmd, sizeof(cmd), "shutdown /r /t %d", sec);
 		system(cmd);
-		printf("[Console] \'다시시작\'을 예약하셨습니다.\n");
+		printf("\'다시시작\'을 예약하셨습니다.\n");
 	}
 	return sec;
 }
@@ -56,30 +56,30 @@ int main(void) {
 	system("shutdown /a");
 	system("cls");
 	//------------------------------------------------------
-	puts("[Console]    -------------------------------------------");
-	puts("[Console]   |                                           |");
-	puts("[Console]   |               [TimerExit]                 |");
-	puts("[Console]   |         컴퓨터 예약종료 프로그램          |");
-	puts("[Console]    -------------------------------------------");
-	puts("[Console]    -------------------------------------------");
-	puts("[Console]   |                                           |");
-	puts("[Console]   |     <1>종료  <2>다시시작                  |");
-	puts("[Console]   |                                           |");
-	puts("[Console]    -------------------------------------------");
-	printf("[Console] 입력 :");
+	puts("   -------------------------------------------");
+	puts("  |                                           |");
+	puts("  |               [TimerExit]                 |");
+	puts("  |         컴퓨터 예약종료 프로그램          |");
+	puts("   -------------------------------------------");
+	puts("   -------------------------------------------");
+	puts("  |                                           |");
+	puts("  |     <1>종료  <2>다시시작                  |");
+	puts("  |                                           |");
+	puts("   -------------------------------------------");
+	printf("입력 :");
 	scanf_s("%d", &choices);
 	sec = setCommand(choices);
-	printf("[Console] %d분 후에 종료됩니다.\n", sec / 60);
+	printf("%d분 후에 종료됩니다.\n", sec / 60);
 	//------------------------------------------------------
-	puts("[Console] 취소 하시겠습니까?");
-	puts("[Console] press    YES = 1     NO = Any Number Key");
+	puts("취소 하시겠습니까?");
+	puts("press    YES = 1     NO = Any Number Key");
 	scanf_s("%d", &choices);
 	if (choices == 1) {
 		system("shutdown /a");
-		puts("[Console] 취소 되었습니다. 아무 키나 누를 시 프로그램이 종료됩니다.");
+		puts("취소 되었습니다. 아무 키나 누를 시 프로그램이 종료됩니다.");
 	}
 	else {
-		puts("[Console] 아무키나 누를 시 프로그램이 종료됩니다.");
+		puts("아무키나 누를 시 프로그램이 종료됩니다.");
 	}
 
 	_getch();
